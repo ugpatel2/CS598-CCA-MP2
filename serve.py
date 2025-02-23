@@ -4,11 +4,10 @@ import socket
 import subprocess
 
 app = Flask(__name__)
-num = 0  # Variable to store the number
 
 @app.route('/', methods=['POST'])
 def load_server():
-    subprocess.Popen(["python", "stress_cpu.py"])
+    subprocess.Popen(["python3", "stress_cpu.py"])
     return jsonify({'message': 'Ran the subprocess successfully'}), 200
 
 
